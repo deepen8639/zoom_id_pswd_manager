@@ -39,66 +39,37 @@
   bottom: 0;
 }
 
-.modal-fade-enter-to .modal-fade-leave {
-  opacity: 1 !important;
 
-}
-
-.modal-fade-enter-active,
-.modal-fade-leave-active {
-  transition: opacity .8s !important;
-
-}
-
-.modal-fade-enter,
-.modal-fade-leave-to {
-  opacity: 0 !important;
-
-}
-.modal {
-  display: block;
-}
 img {
   cursor: pointer;
 }
 </style>
 <template id="">
 <div class="container-fluid">
-  <!-- <div class="card-deck"> -->
-  <!-- <div class="container"> -->
-
   <div class="row">
-    <!-- {{ ZoomData }} -->
     <div class="card_width m-25px" v-for="(dateidpswd, listname) in ZoomData.data">
-      <transition name="modal-fade">
-        <inputform-modal v-if="checkmodalonoff(listname)" :listname="listname" :userid="userid" @close="modaloff($event)"></inputform-modal>
-      </transition>
-
+      <!-- <transition name="modal-fade"> -->
+      <inputform-modal v-if="checkmodalonoff(listname)" :listname="listname" :userid="userid" @close="modaloff($event)"></inputform-modal>
+      <!-- </transition> -->
 
       <div class="card">
-
         <h5 class="card-header"><span v-text="listname"></span>
-          <!-- <button class="btn btn-sm btn-danger float-right" @click="deleteLectureCard(lecturename)">D</button> -->
           <div class="dropdown float-right">
-            <!-- <button type="button" class="btn btn-primary">ボタン</button> -->
             <button class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <!-- <span class="sr-only">ドロップダウンの切替</span> -->
             </button>
             <div class="dropdown-menu">
               <button @click="modalon(listname)" class="dropdown-item text-primary">add</button>
               <button @click="deleteList(listname)" class="dropdown-item text-danger">delete</button>
             </div>
-            <!-- </div>
-              </div> -->
           </div>
 
         </h5>
 
         <div class="card-body">
           <div class="" v-for="dip in dateidpswd">
-            <transition name="modal-fade">
-              <editingform-modal v-if="checkeditingmodal(dip.id)" :id=dip.id :zoomid=dip.zoom_id :zoompswd=dip.zoom_pswd @close="editingmodaloff($event)" />
-            </transition>
+            <!-- <transition name="modal-fade"> -->
+            <editingform-modal v-if="checkeditingmodal(dip.id)" :id=dip.id :zoomid=dip.zoom_id :zoompswd=dip.zoom_pswd @close="editingmodaloff($event)" />
+            <!-- </transition> -->
 
             <div class="alert alert-secondary base-card">
               <table class="">
@@ -110,11 +81,8 @@ img {
                   <td>pswd</td>
                   <td>{{ dip.zoom_pswd }}</td>
                 </tr>
-                <!-- <td> -->
                 <div class="dropdown float-right right-bottom">
-                  <!-- <button type="button" class="btn btn-primary">ボタン</button> -->
                   <img src="../../img/zoomDataManager(menuicon).png" class="rounded img-thumnbnail w-18px h-18px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-hidden="true">
-                  <!-- <span class="sr-only">ドロップダウンの切替</span> -->
 
                   <div class="dropdown-menu">
                     <button @click="transisionZoom(dip.zoom_id,dip.zoom_pswd)" class="dropdown-item text-primary">start Zoom</button>
@@ -122,19 +90,10 @@ img {
                     <button @click="deleteOneCard(dip.id)" class="dropdown-item text-danger">delete</button>
                   </div>
 
-                  <!-- </div>
-                </div> -->
                 </div>
-                <!-- </td> -->
-
-                <!-- </div>
-                </div> -->
-                <!-- </td> -->
 
               </table>
             </div>
-
-            <!-- <strip-cardbs :date="dip.zoom_date" :zoomid="dip.zoom_id" :pswd="dip.zoom_pswd" :dbid="dip.id" @deleted="getZoomData(userid)" /> -->
 
           </div>
 
@@ -142,7 +101,6 @@ img {
 
         <div class="card-footer">
           <small class="text-muted">{{ }}</small>
-          <!-- <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> -->
         </div>
       </div>
 
@@ -292,8 +250,7 @@ export default {
           console.log('axios get success!');
           console.log(res.data);
           ZoomData.setZoomData(res.data);
-          // console.log(this.ZoomData);
-          // console.log(res.data);
+
           //モーダルOn,Off切り替えのための各授業ごとの連想配列を用意
           // self.modalonoff = self._setmodalonoff(self.ZoomData.data);
           ZoomData.setModalOnOff(res.data);

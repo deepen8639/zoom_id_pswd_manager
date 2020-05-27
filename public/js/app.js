@@ -2312,48 +2312,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2490,9 +2448,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(url + userid).then(function (res) {
         console.log('axios get success!');
         console.log(res.data);
-        _ZoomData__WEBPACK_IMPORTED_MODULE_2__["default"].setZoomData(res.data); // console.log(this.ZoomData);
-        // console.log(res.data);
-        //モーダルOn,Off切り替えのための各授業ごとの連想配列を用意
+        _ZoomData__WEBPACK_IMPORTED_MODULE_2__["default"].setZoomData(res.data); //モーダルOn,Off切り替えのための各授業ごとの連想配列を用意
         // self.modalonoff = self._setmodalonoff(self.ZoomData.data);
 
         _ZoomData__WEBPACK_IMPORTED_MODULE_2__["default"].setModalOnOff(res.data);
@@ -7259,7 +7215,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card_width[data-v-74546fd9] {\n  width: 300px;\n}\n.p-25px[data-v-74546fd9] {\n  padding: 25px;\n}\n.m-25px[data-v-74546fd9] {\n  margin: 25px;\n}\n.w-25px[data-v-74546fd9] {\n  width: 25px;\n}\n.h-25px[data-v-74546fd9] {\n  height: 25px;\n}\n.w-18px[data-v-74546fd9] {\n  width: 18px;\n}\n.h-18px[data-v-74546fd9] {\n  height: 18px;\n}\n.base-card[data-v-74546fd9] {\n  position: relative;\n}\n.right-bottom[data-v-74546fd9] {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n}\n.modal-fade-enter-to .modal-fade-leave[data-v-74546fd9] {\n  opacity: 1 !important;\n}\n.modal-fade-enter-active[data-v-74546fd9],\n.modal-fade-leave-active[data-v-74546fd9] {\n  transition: opacity .8s !important;\n}\n.modal-fade-enter[data-v-74546fd9],\n.modal-fade-leave-to[data-v-74546fd9] {\n  opacity: 0 !important;\n}\n.modal[data-v-74546fd9] {\n  display: block;\n}\nimg[data-v-74546fd9] {\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.card_width[data-v-74546fd9] {\n  width: 300px;\n}\n.p-25px[data-v-74546fd9] {\n  padding: 25px;\n}\n.m-25px[data-v-74546fd9] {\n  margin: 25px;\n}\n.w-25px[data-v-74546fd9] {\n  width: 25px;\n}\n.h-25px[data-v-74546fd9] {\n  height: 25px;\n}\n.w-18px[data-v-74546fd9] {\n  width: 18px;\n}\n.h-18px[data-v-74546fd9] {\n  height: 18px;\n}\n.base-card[data-v-74546fd9] {\n  position: relative;\n}\n.right-bottom[data-v-74546fd9] {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n}\nimg[data-v-74546fd9] {\n  cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -39431,23 +39387,16 @@ var render = function() {
           "div",
           { staticClass: "card_width m-25px" },
           [
-            _c(
-              "transition",
-              { attrs: { name: "modal-fade" } },
-              [
-                _vm.checkmodalonoff(listname)
-                  ? _c("inputform-modal", {
-                      attrs: { listname: listname, userid: _vm.userid },
-                      on: {
-                        close: function($event) {
-                          return _vm.modaloff($event)
-                        }
-                      }
-                    })
-                  : _vm._e()
-              ],
-              1
-            ),
+            _vm.checkmodalonoff(listname)
+              ? _c("inputform-modal", {
+                  attrs: { listname: listname, userid: _vm.userid },
+                  on: {
+                    close: function($event) {
+                      return _vm.modaloff($event)
+                    }
+                  }
+                })
+              : _vm._e(),
             _vm._v(" "),
             _c("div", { staticClass: "card" }, [
               _c("h5", { staticClass: "card-header" }, [
@@ -39502,27 +39451,20 @@ var render = function() {
                     "div",
                     {},
                     [
-                      _c(
-                        "transition",
-                        { attrs: { name: "modal-fade" } },
-                        [
-                          _vm.checkeditingmodal(dip.id)
-                            ? _c("editingform-modal", {
-                                attrs: {
-                                  id: dip.id,
-                                  zoomid: dip.zoom_id,
-                                  zoompswd: dip.zoom_pswd
-                                },
-                                on: {
-                                  close: function($event) {
-                                    return _vm.editingmodaloff($event)
-                                  }
-                                }
-                              })
-                            : _vm._e()
-                        ],
-                        1
-                      ),
+                      _vm.checkeditingmodal(dip.id)
+                        ? _c("editingform-modal", {
+                            attrs: {
+                              id: dip.id,
+                              zoomid: dip.zoom_id,
+                              zoompswd: dip.zoom_pswd
+                            },
+                            on: {
+                              close: function($event) {
+                                return _vm.editingmodaloff($event)
+                              }
+                            }
+                          })
+                        : _vm._e(),
                       _vm._v(" "),
                       _c(
                         "div",
