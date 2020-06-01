@@ -66,7 +66,7 @@ export default {
     },
     updateOneCardInfo: function(zoomid, zoompswd, id) {
       let self = this;
-      let url = '/api/zoomidpswd/update/'
+      let url = '/api/zoomidpswd/update'
       let params = {
         zoomid,
         zoompswd,

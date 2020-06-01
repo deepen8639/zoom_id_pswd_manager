@@ -61,7 +61,7 @@ export default {
   methods: {
     deleteOneCard: function(id) {
       let self = this;
-      let url = '/api/zoomidpswd/delete/';
+      let url = '/api/zoomidpswd/delete';
       let params = {
         id,
       } //deleteするデータを変数へ。

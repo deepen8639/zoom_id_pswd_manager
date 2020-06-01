@@ -136,7 +136,7 @@ export default {
     deleteList: function(listname) {
       //授業を一つ分削除する。
       let self = this;
-      let url = '/api/zoomidpswd/delete/';
+      let url = '/api/zoomidpswd/delete';
       let params = {
         listname: listname,
         userid: self.userid,
@@ -168,7 +168,7 @@ export default {
 
     deleteOneCard: function(id) {
       let self = this;
-      let url = '/api/zoomidpswd/delete/';
+      let url = '/api/zoomidpswd/delete';
       let params = {
         id,
       } //deleteするデータを変数へ。
@@ -244,7 +244,7 @@ export default {
     getZoomData: function(userid) {
       //授業カード情報の取得
       let self = this;
-      let url = '/api/zoomidpswd/index/';
+      let url = '/api/zoomidpswd/index';
       axios.get(url + userid)
         .then(function(res) {
           console.log('axios get success!');
