@@ -1968,7 +1968,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     deleteOneCard: function deleteOneCard(id) {
       var self = this;
-      var url = '/api/zoomidpswd/delete/';
+      var url = '/api/zoomidpswd/delete';
       var params = {
         id: id
       }; //deleteするデータを変数へ。
@@ -2338,7 +2338,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteList: function deleteList(listname) {
       //授業を一つ分削除する。
       var self = this;
-      var url = '/api/zoomidpswd/delete/';
+      var url = '/api/zoomidpswd/delete';
       var params = {
         listname: listname,
         userid: self.userid
@@ -2368,7 +2368,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     deleteOneCard: function deleteOneCard(id) {
       var self = this;
-      var url = '/api/zoomidpswd/delete/';
+      var url = '/api/zoomidpswd/delete';
       var params = {
         id: id
       }; //deleteするデータを変数へ。
@@ -2444,7 +2444,7 @@ __webpack_require__.r(__webpack_exports__);
     getZoomData: function getZoomData(userid) {
       //授業カード情報の取得
       var self = this;
-      var url = '/api/zoomidpswd/index/';
+      var url = '/api/zoomidpswd/index';
       axios.get(url + userid).then(function (res) {
         console.log('axios get success!');
         console.log(res.data);
@@ -2543,7 +2543,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     updateOneCardInfo: function updateOneCardInfo(zoomid, zoompswd, id) {
       var self = this;
-      var url = '/api/zoomidpswd/update/';
+      var url = '/api/zoomidpswd/update';
       var params = {
         zoomid: zoomid,
         zoompswd: zoompswd,
